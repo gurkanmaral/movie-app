@@ -262,7 +262,7 @@ const handleFavorite = () => {
 console.log(similarMovies)
 console.log(favCountData)
 console.log(movieDetails)
-
+console.log(currentUser)
 
   return (
     <div className='movie-details-container'>

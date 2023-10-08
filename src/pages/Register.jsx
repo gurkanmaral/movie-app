@@ -35,8 +35,8 @@ const handleClick = async(e)=>{
       <div className='login'>
           <div className='login-1'>
             <h1>LOGIN</h1>
-            <Link to="/register" className='link'>
-             <p>Don't you have an account? <span className='register-span'>Register</span></p>
+            <Link to="/login" className='link'>
+             <p>Don't you have an account? <span className='register-span'>Login</span></p>
             </Link>           
           </div>
           <div className='login-2'>

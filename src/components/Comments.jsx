@@ -44,9 +44,13 @@ const Comments = ({mediaId}) => {
 
     const handleClick = async (e) => {
         e.preventDefault();
-       
+       if(currentUser === null) {
+        alert('you have to login')
+       }else{
         mutation.mutate({ desc, mediaId});
         setDesc("");
+       }
+        
       }
 
   return (

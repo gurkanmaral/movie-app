@@ -38,7 +38,7 @@
     display: flex;
 }
 .login{
-    background-color: rgb(184, 99, 99);
+    background-color: rgb(0, 0, 0);
     width: 600px;
     height: 700px;
     border-radius: 20px;
@@ -51,9 +51,10 @@
     justify-content: center;
     flex-direction: column;
     margin-top: 20px;
+    gap: 10px;
 }
 .register-span{
-    color: antiquewhite;
+    color: red;
 }
 .login-2{
     display: flex;
@@ -67,11 +68,18 @@
     justify-content: center;
     width: 100%;
     gap: 20px;
+    outline: none;
 }
 .login-input{
     width: 50%;
     height: 30px;
 
+}
+.login-button{
+    width: 100px;
+    height: 30px;
+    font-family: 'Helvetica', sans-serif;
+  cursor: pointer;
 }
 
 .link{
