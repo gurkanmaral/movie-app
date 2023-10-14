@@ -1,6 +1,6 @@
-const express = require('express');
-const cors = require('cors');
-const cookieParser = require('cookie-parser');
+import express from "express";
+import cors from "cors"
+import cookieParser from "cookie-parser";
 import userRoutes from "./routes/users.js"
 import authRoutes from "./routes/auth.js"
 import likeRoutes from "./routes/likes.js"
@@ -9,7 +9,7 @@ import watchedRoutes from "./routes/watched.js"
 import watchlistRoutes from "./routes/watchlist.js"
 import ratingRoutes from "./routes/rating.js"
 import favoritesRoutes from "./routes/favorites.js"
-const multer = require("multer");
+import multer from "multer";
 import relationshipRoutes from "./routes/relationship.js"
 const app = express();
 
