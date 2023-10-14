@@ -9,7 +9,7 @@ import watchedRoutes from "./routes/watched.js"
 import watchlistRoutes from "./routes/watchlist.js"
 import ratingRoutes from "./routes/rating.js"
 import favoritesRoutes from "./routes/favorites.js"
-import multer from "multer";
+const multer = require("multer");
 import relationshipRoutes from "./routes/relationship.js"
 const app = express();
 
