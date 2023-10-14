@@ -23,7 +23,7 @@ export const AuthContextProvider = ({ children }) => {
 
     const login = async(inputs)=>{
         try{
-          const res = await axios.post("http://localhost:8800/api/auth/login",inputs,{
+          const res = await axios.post("https://movie-app-sk33.onrender.com/api/auth/login",inputs,{
             withCredentials:true,
           })
           setCurrentUser(res.data)
@@ -33,7 +33,7 @@ export const AuthContextProvider = ({ children }) => {
     }
     const logout = async () =>{
       try {
-        const res = await axios.post("http://localhost:8800/api/auth/logout")
+        const res = await axios.post("https://movie-app-sk33.onrender.com/api/auth/logout")
         setCurrentUser(null);
         localStorage.setItem("currentUser", null);
       } catch (error) {

@@ -58,3 +58,7 @@ app.use("/api/favorites",favoritesRoutes)
 app.listen(8800,()=>{
     console.log("API working")
 });
+
+app.get("/", (req, res) => {
+    res.send("API is running.");
+  });
