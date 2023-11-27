@@ -420,9 +420,8 @@ const handleFavorite = ()=>{
                        <div className='follow-name-desc'>
                          <p>{comment?.name}</p>
                          <p>{comment?.desc}</p>
-                       </div>
-                       
-                    </div>
+                       </div>     
+                  </div>
           ))}        
             </div>
             <div className='friends-comments-2'>
@@ -435,9 +434,7 @@ const handleFavorite = ()=>{
                           </div>
                               <div className='follow-rating-1'>
                                 <span>{rating.rating}</span>
-                              </div>
-                            
-                            
+                              </div>               
                         </div>
                       ))}
             </div>

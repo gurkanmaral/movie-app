@@ -28,6 +28,7 @@ const MovieDetails = () => {
   const posterPath = movieDetails.poster_path
   const mediaType = "movies"
   const userId = currentUser?.id
+  
   let posterUrl = null
   if (posterPath) {
       posterUrl = `https://image.tmdb.org/t/p/original/${posterPath}`
@@ -109,7 +110,7 @@ console.log(cast)
       return res.data;
     })
   )
-    const {isLoading:favCountLoading,data: favCountData} = useQuery(["favCountMovie"], ()=>
+    const {isLoading:favCountLoading,data:  favCountData} = useQuery(["favCountMovie"], ()=>
       makeRequest.get(`favorites/count?mediaId=${mediaId}`).then((res)=>{
         return res.data;
       })

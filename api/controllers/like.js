@@ -21,7 +21,7 @@ export const addLike = (req,res)=>{
     jwt.verify(token,"secretkey",(err,userInfo)=>{
         if(err) return res.status(403).json("token is not valid")
 
-        const mediaType = req.body.media_type; // The type of media ('movies' or 'series')
+        const mediaType = req.body.media_type;
       
        
         const q = "INSERT INTO likes (`userId`, `mediaId`, `media_type`, `likedAt`) VALUES (?)";
@@ -67,13 +67,13 @@ export const likeCount = (req,res)=>{
 
     const userId = req.query.userId;
   
-    // Fetch watched count for movies
+    
     const qMovies = "SELECT COUNT(*) AS likedMoviesCount FROM likes WHERE userId = ? AND media_type = 'movies'";
   
-    // Fetch watched count for series
+   
     const qSeries = "SELECT COUNT(*) AS likedSeriesCount FROM likes WHERE userId = ? AND media_type = 'series'";
   
-    // Perform both queries in parallel using Promise.all
+ 
     Promise.all(
       [
         new Promise((resolve, reject) => {
@@ -91,7 +91,7 @@ export const likeCount = (req,res)=>{
       ]
     )
       .then(([moviesCount, seriesCount]) => {
-        // Combine the results and return them
+       
         const result = { likedMoviesCount: moviesCount, likedSeriesCount: seriesCount };
         return res.status(200).json(result);
       })
@@ -111,7 +111,7 @@ export const getLikedMovies = (req,res)=>{
   db.query(q, [userId], (err, data) => {
     if (err) return res.status(500).json(err);
 
-    // Return the list of media IDs of watched movies for the user
+   
     return res.status(200).json(data);
   });
 
@@ -127,7 +127,7 @@ export const getLikedSeries = (req,res)=>{
   db.query(q, [userId], (err, data) => {
     if (err) return res.status(500).json(err);
 
-    // Return the list of media IDs of watched movies for the user
+   
     return res.status(200).json(data);
   });
 

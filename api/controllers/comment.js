@@ -71,9 +71,9 @@ export const userComments = (req,res)=>{
     WHERE c.mediaId = ? AND c.userId = ? 
     ORDER BY c.createdAt DESC`;
 
-// Assuming you also receive the 'userId' from the request (query or body)
+
 const mediaId = req.query.mediaId;
-const userId = req.query.userId; // Assuming you are using query parameters, adjust this if needed
+const userId = req.query.userId; 
 
 db.query(q, [mediaId, userId], (err, data) => {
 if (err) return res.status(500).json(err);
@@ -100,11 +100,11 @@ export const getFollowingComments = (req,res)=>{
             const followingIDs = followerData.map((follower) => follower.followedUserId);
         
             if (followingIDs.length === 0) {
-              // If the currentUser is not following anyone, return an empty array
+              
               return res.status(200).json([]);
             }
         
-            // Step 2: Get the comments of the users that the currentUser is following
+         
             const q = `SELECT c.*, u.id AS userId, name, profilePic
                        FROM comments AS c
                        JOIN users AS u ON (u.id = c.userId)

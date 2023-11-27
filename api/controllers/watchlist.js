@@ -72,7 +72,7 @@ export const countWatchlist = (req,res)=>{
     // Fetch watched count for series
     const qSeries = "SELECT COUNT(*) AS watchlistSeriesCount FROM watchlist WHERE userId = ? AND media_type = 'series'";
   
-    // Perform both queries in parallel using Promise.all
+    
     Promise.all(
       [
         new Promise((resolve, reject) => {

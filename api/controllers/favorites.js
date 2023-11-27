@@ -11,7 +11,7 @@ export const getFavorites = (req,res)=>{
     db.query(q, [req.query.mediaId], (err, data) => {
         if (err) return res.status(500).json(err);
     
-        // Return the list of media IDs of watched movies for the user
+       
         return res.status(200).json(data.map((watched)=> watched.userId));
       });
 }
@@ -23,9 +23,9 @@ export const addFavorites = (req, res) => {
     jwt.verify(token, "secretkey", (err, userInfo) => {
       if (err) return res.status(403).json("Token is not valid");
   
-      const mediaType = req.body.media_type; // The type of media ('movie' or 'series')
+      const mediaType = req.body.media_type; 
   
-      // Check if the user has already added the maximum number of movies and series to favorites
+      
       const qCount = "SELECT COUNT(*) AS favoritesCount FROM favorites WHERE userId = ? AND media_type = ?";
       db.query(qCount, [userInfo.id, mediaType], (countErr, countResult) => {
         if (countErr) {

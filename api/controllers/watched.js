@@ -67,13 +67,13 @@ export const deleteWatched = (req,res)=>{
 export const countFilms = (req, res) => {
     const userId = req.query.userId;
   
-    // Fetch watched count for movies
+  
     const qMovies = "SELECT COUNT(*) AS watchedMoviesCount FROM watched WHERE userId = ? AND media_type = 'movies'";
   
-    // Fetch watched count for series
+   
     const qSeries = "SELECT COUNT(*) AS watchedSeriesCount FROM watched WHERE userId = ? AND media_type = 'series'";
   
-    // Perform both queries in parallel using Promise.all
+   
     Promise.all(
       [
         new Promise((resolve, reject) => {
@@ -91,7 +91,7 @@ export const countFilms = (req, res) => {
       ]
     )
       .then(([moviesCount, seriesCount]) => {
-        // Combine the results and return them
+       
         const result = { watchedMoviesCount: moviesCount, watchedSeriesCount: seriesCount };
         return res.status(200).json(result);
       })
@@ -109,7 +109,7 @@ export const countFilms = (req, res) => {
     db.query(q, [userId], (err, data) => {
       if (err) return res.status(500).json(err);
   
-      // Return the list of media IDs of watched movies for the user
+     
       return res.status(200).json(data);
     });
   }
@@ -122,7 +122,7 @@ export const countFilms = (req, res) => {
     db.query(q, [userId], (err, data) => {
       if (err) return res.status(500).json(err);
   
-      // Return the list of media IDs of watched movies for the user
+      
       return res.status(200).json(data);
     });
   }

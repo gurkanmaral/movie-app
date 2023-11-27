@@ -15,6 +15,7 @@ const Movies = ({popularFilms}) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [sortBy, setSortBy] = useState('popularity.desc');
   const minimumVoteCount = 500;
+  
   useEffect(()=>{
     const movieGenres = async()=>{
       try{

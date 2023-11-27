@@ -141,7 +141,7 @@ useEffect(()=>{
       </div>
       <div className='popular-container'>
         <div className='popular-movie-h3'>
-        <Link style={{textDecoration:'none',color:'inherit'}} to="/series">
+        <Link style={{textDecoration:'none',color:'inherit'}} to="/films">
             <h3>POPULAR MOVIES</h3>
         </Link>     
         </div>    

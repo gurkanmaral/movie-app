@@ -25,7 +25,7 @@ export const addRating = (req, res) => {
     db.query(q, [userId, media_type, mediaId, rating,createdAt], (err, result) => {
       if (err) return res.status(500).json(err);
   
-      // If the insertion was successful, you can return the ID of the newly inserted rating
+      
       const insertedId = result.insertId;
       return res.status(201).json({ id: insertedId });
     });
@@ -40,7 +40,7 @@ export const updateRating = (req,res) =>{
   db.query(q, [rating, mediaId, userId], (err, result) => {
     if (err) return res.status(500).json(err);
 
-    // If the update was successful, you can return the ID of the updated rating
+  
     const updatedId = result.insertId;
     return res.status(200).json({ id: updatedId });
   });
@@ -76,11 +76,11 @@ export const getFriendsRatings = (req,res)=>{
           const followingIDs = followerData.map((follower) => follower.followedUserId);
       
           if (followingIDs.length === 0) {
-            // If the currentUser is not following anyone, return an empty array
+           
             return res.status(200).json([]);
           }
       
-          // Step 2: Get the comments of the users that the currentUser is following
+         
           const q = `
           SELECT r.rating, u.id AS userId, u.name, u.profilePic
           FROM rating AS r

@@ -16,7 +16,7 @@ const Popular = ({movie,series,isMovie}) => {
               <div className='popular-img'>
                 <img src={posterUrl} alt="" />    
               </div>            
-              <div className='popular-name'>
+              <div className='popular-name '>
                 <p>{movie.title || movie.name}</p>
               </div>
             </Link>
