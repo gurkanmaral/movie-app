@@ -110,7 +110,7 @@ useEffect(() => {
               style={{
                 background: '#14181c url(../assets/bg.png)',
                 color: 'white',
-                borderRadius: '8px', // Add the border-radius here
+                borderRadius: '8px', 
               }} 
               onChange={handleGenreSelect}>
                   <option style={{color:"white"}}>All</option>
@@ -134,7 +134,7 @@ useEffect(() => {
           style={{
             background: '#14181c url(../assets/bg.png)',
             color: 'white',
-            borderRadius: '8px', // Add the border-radius here
+            borderRadius: '8px', 
           }} 
         >
           <option value="popularity.desc">Popularity</option>
@@ -153,18 +153,18 @@ useEffect(() => {
           color='primary' 
           defaultPage={1}
           page={currentPage}
-          count={totalPage} // Set the total number of pages to 20
-          onChange={handlePageChange} // Handle page changes
+          count={totalPage} 
+          onChange={handlePageChange} 
           size='medium'
           sx={{
             '& .Mui-selected': {
-              color: 'red', // Change the color of selected page number to white
+              color: 'red', 
             },
             '& .MuiPaginationItem-page': {
-              color: 'white', // Change the color of other page numbers to white
+              color: 'white', 
             },
             '& .MuiPaginationItem-root': {
-              color: 'white', // Change the color of the dots and arrows to white
+              color: 'white',
             },
           }}
         />

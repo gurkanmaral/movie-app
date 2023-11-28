@@ -37,7 +37,7 @@ const Update = ({setOpenUpdate,user}) => {
     },
     {
       onSuccess: () => {
-        // Invalidate and refetch
+       
         queryClient.invalidateQueries(["user"]);
       },
     }
@@ -45,7 +45,7 @@ const Update = ({setOpenUpdate,user}) => {
   const handleClick = async (e) => {
     e.preventDefault();
 
-    //TODO: find a better way to get image URL
+   
     
     let profileUrl;
     profileUrl = profile ? await upload(profile) : user.profilePic;

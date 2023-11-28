@@ -19,8 +19,8 @@ const Comments = ({mediaId}) => {
 
     const {isLoading:commentsLoading,data:commentsData} = useQuery(["commentsUser"], () => {
         if (!currentUser?.id) {
-          // Return an empty object or null if the currentUser is not available
-          return {}; // or return null;
+          
+          return {}; 
         }
     
         return makeRequest

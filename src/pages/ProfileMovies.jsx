@@ -50,7 +50,7 @@ const ProfileMovies = () => {
             }));
             setWatchedMovies(moviesWithCreatedAt);
   
-            // Fetch ratings for watched movies
+           
             const ratingsPromises = mediaIds.map((mediaId) =>
               makeRequest.get(`/rating?mediaId=${mediaId}&userId=${userId}`)
             );
@@ -97,11 +97,10 @@ const ProfileMovies = () => {
       try {
         const response = await makeRequest.delete(`/comments?commentId=${commentId}&mediaId=${mediaId}`);
         console.log(response.data); // Handle success (optional)
-        // Refresh the comments after deletion
-        // For better performance, you can directly remove the deleted comment from the 'movieComments' state.
+        
         window.location.reload();
       } catch (error) {
-        console.error(error); // Handle error (optional)
+        console.error(error); 
       }
     };
   

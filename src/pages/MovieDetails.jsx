@@ -133,7 +133,7 @@ console.log(watchlistData)
   },
   {
     onSuccess:()=>{
-          // Invalidate and refetch
+         
           queryClient.invalidateQueries(["likes"]);
     },
   }
@@ -191,15 +191,15 @@ const handleRatingSubmit = async(e) => {
   e.preventDefault();
   const ratingRegex = /^(10|[1-9](\.\d)?)$/;
   if (!rating.match(ratingRegex)) {
-    // Display an error message or take appropriate action for invalid input
+  
     alert("Invalid rating. Please enter a valid rating between 1 and 10.");
     return;
   }
 
-  // Convert the rating from a string to a number
+ 
   const newRating = parseInt(rating);
 
-  // Call the mutation function to add the rating
+  
   ratingMutation.mutate({
     userId,
     media_type: mediaType,
@@ -207,11 +207,10 @@ const handleRatingSubmit = async(e) => {
     rating: newRating,
   });
   if (!watchedData.includes(currentUser?.id)) {
-    // If not, mark the movie as watched
+    
     await handleWatch();
   }
 
-  // Clear the input field after submission
   setRating('');
 };
 
@@ -251,10 +250,10 @@ const handleFavorite = () => {
   );
 
   if (favoriteMovies.length >= maxFavoritesMovies) {
-    // If the user has already added 5 movies, show an alert or a <p> element
+   
     alert("You have already added 5 movies to favorites. You can't add more.");
   } else {
-    // Otherwise, proceed with adding or deleting the favorite
+   
     favoritesMutation.mutate(favoritesData.includes(currentUser?.id));
   }
 };
